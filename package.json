@@ -1,8 +1,8 @@
 {
-  "name": "kapsys-pages-strapi",
+  "name": "drcelik.com-strapi",
   "private": true,
   "version": "0.1.0",
-  "description": "This is Kapsys pages strapi template",
+  "description": "This is Kapsys Strapi project for drcelik.com",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
