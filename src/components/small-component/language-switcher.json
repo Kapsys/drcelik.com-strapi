@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_small_component_language_switchers",
+  "info": {
+    "displayName": "Language Switcher",
+    "icon": "manyWays",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "fullTitle": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    }
+  }
+}

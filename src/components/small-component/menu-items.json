@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_small_component_menu_items",
+  "info": {
+    "displayName": "Menu Items",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "itemName": {
+      "type": "string"
+    },
+    "itemLink": {
+      "type": "string"
+    }, 
+    "subMenuItems": {
+      "displayName": "Sub Menu Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.sub-menu-items"
+    }
+  }
+}
