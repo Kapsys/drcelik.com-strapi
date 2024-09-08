@@ -65,6 +65,31 @@ export interface SmallComponentInfos extends Schema.Component {
   };
 }
 
+export interface SmallComponentFooterMenuItems extends Schema.Component {
+  collectionName: 'components_small_component_footer_menu_items';
+  info: {
+    displayName: 'Footer Menu Items';
+    icon: 'filter';
+  };
+  attributes: {
+    menuItem: Attribute.String;
+    menuItemUrl: Attribute.String;
+  };
+}
+
+export interface SmallComponentFooterItems extends Schema.Component {
+  collectionName: 'components_small_component_footer_items';
+  info: {
+    displayName: 'Footer Items';
+    icon: 'manyToMany';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    footerMenuItems: Attribute.Component<'small-component.footer-menu-items', true>;
+  };
+}
+
 export interface SmallComponentButton extends Schema.Component {
   collectionName: 'components_small_component_buttons';
   info: {
@@ -144,6 +169,36 @@ export interface SectionHeader extends Schema.Component {
   };
 }
 
+export interface SectionFooter extends Schema.Component {
+  collectionName: 'components_section_footers';
+  info: {
+    displayName: 'Footer';
+    icon: 'stack';
+    description: '';
+  };
+  attributes: {
+    footerItems: Attribute.Component<'small-component.footer-items', true>;
+    footerLogo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    footerCopywritingText: Attribute.String;
+    kapsysText: Attribute.String;
+    kapsysLogo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    button: Attribute.Component<'small-component.button'>;
+    socials: Attribute.Component<'small-component.socials', true>;
+  };
+}
+
+export interface SectionBannerSection extends Schema.Component {
+  collectionName: 'components_section_banner_sections';
+  info: {
+    displayName: 'Banner Section';
+    icon: 'crop';
+  };
+  attributes: {
+    bannerIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    bannerText: Attribute.Text;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -152,10 +207,14 @@ declare module '@strapi/types' {
       'small-component.menu-items': SmallComponentMenuItems;
       'small-component.language-switcher': SmallComponentLanguageSwitcher;
       'small-component.infos': SmallComponentInfos;
+      'small-component.footer-menu-items': SmallComponentFooterMenuItems;
+      'small-component.footer-items': SmallComponentFooterItems;
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
       'section.header': SectionHeader;
+      'section.footer': SectionFooter;
+      'section.banner-section': SectionBannerSection;
     }
   }
 }

@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_section_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "footerItems": {
+      "displayName": "Footer Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.footer-items"
+    },
+    "footerLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "footerCopywritingText": {
+      "type": "string"
+    },
+    "kapsysText": {
+      "type": "string"
+    },
+    "kapsysLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.button"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.socials"
+    }
+  }
+}

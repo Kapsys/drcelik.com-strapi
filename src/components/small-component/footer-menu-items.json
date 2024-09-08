@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_small_component_footer_menu_items",
+  "info": {
+    "displayName": "Footer Menu Items",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "menuItem": {
+      "type": "string"
+    },
+    "menuItemUrl": {
+      "type": "string"
+    }
+  }
+}

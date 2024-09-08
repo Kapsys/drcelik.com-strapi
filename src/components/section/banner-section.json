@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_banner_sections",
+  "info": {
+    "displayName": "Banner Section",
+    "icon": "crop"
+  },
+  "options": {},
+  "attributes": {
+    "bannerIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "bannerText": {
+      "type": "text"
+    }
+  }
+}

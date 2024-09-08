@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_small_component_footer_items",
+  "info": {
+    "displayName": "Footer Items",
+    "icon": "manyToMany",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "footerMenuItems": {
+      "displayName": "Footer Menu Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.footer-menu-items"
+    }
+  }
+}
