@@ -15,7 +15,8 @@
     "dynamicSections": {
       "type": "dynamiczone",
       "components": [
-        "section.banner-section"
+        "section.banner-section",
+        "section.hero-section"
       ]
     }
   }

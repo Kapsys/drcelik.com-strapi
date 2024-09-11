@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_small_component_inside_lines",
+  "info": {
+    "displayName": "Inside Lines",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "options": {
+      "type": "enumeration",
+      "enum": [
+        "text-gradient-1",
+        "text-black",
+        "text-white"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_small_component_title_components",
+  "info": {
+    "displayName": "Title Component",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "lines": {
+      "displayName": "Lines",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.lines"
+    }
+  }
+}

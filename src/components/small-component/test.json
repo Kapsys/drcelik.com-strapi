@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_small_component_tests",
+  "info": {
+    "displayName": "test",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "options": {
+      "type": "enumeration",
+      "enum": [
+        "text-gradient-1",
+        "text-black",
+        "text-white"
+      ]
+    }
+  }
+}

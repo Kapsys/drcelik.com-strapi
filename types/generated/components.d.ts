@@ -1,5 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SmallComponentTitleComponent extends Schema.Component {
+  collectionName: 'components_small_component_title_components';
+  info: {
+    displayName: 'Title Component';
+    icon: 'envelop';
+  };
+  attributes: {
+    lines: Attribute.Component<'small-component.lines', true>;
+  };
+}
+
+export interface SmallComponentTest extends Schema.Component {
+  collectionName: 'components_small_component_tests';
+  info: {
+    displayName: 'test';
+    icon: 'connector';
+  };
+  attributes: {
+    options: Attribute.Enumeration<['text-gradient-1', 'text-black', 'text-white']>;
+  };
+}
+
 export interface SmallComponentSubMenuItems extends Schema.Component {
   collectionName: 'components_small_component_sub_menu_items';
   info: {
@@ -37,6 +59,18 @@ export interface SmallComponentMenuItems extends Schema.Component {
   };
 }
 
+export interface SmallComponentLines extends Schema.Component {
+  collectionName: 'components_small_component_lines';
+  info: {
+    displayName: 'Lines';
+    icon: 'manyToOne';
+  };
+  attributes: {
+    insideLines: Attribute.Component<'small-component.inside-lines', true>;
+    classname: Attribute.String;
+  };
+}
+
 export interface SmallComponentLanguageSwitcher extends Schema.Component {
   collectionName: 'components_small_component_language_switchers';
   info: {
@@ -48,6 +82,18 @@ export interface SmallComponentLanguageSwitcher extends Schema.Component {
     title: Attribute.String;
     fullTitle: Attribute.String;
     key: Attribute.String;
+  };
+}
+
+export interface SmallComponentInsideLines extends Schema.Component {
+  collectionName: 'components_small_component_inside_lines';
+  info: {
+    displayName: 'Inside Lines';
+    icon: 'discuss';
+  };
+  attributes: {
+    text: Attribute.String;
+    options: Attribute.Enumeration<['text-gradient-1', 'text-black', 'text-white']>;
   };
 }
 
@@ -153,6 +199,19 @@ export interface SharedMetaSocial extends Schema.Component {
   };
 }
 
+export interface SectionHeroSection extends Schema.Component {
+  collectionName: 'components_section_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    subtitle: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface SectionHeader extends Schema.Component {
   collectionName: 'components_section_headers';
   info: {
@@ -202,16 +261,21 @@ export interface SectionBannerSection extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'small-component.title-component': SmallComponentTitleComponent;
+      'small-component.test': SmallComponentTest;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
       'small-component.socials': SmallComponentSocials;
       'small-component.menu-items': SmallComponentMenuItems;
+      'small-component.lines': SmallComponentLines;
       'small-component.language-switcher': SmallComponentLanguageSwitcher;
+      'small-component.inside-lines': SmallComponentInsideLines;
       'small-component.infos': SmallComponentInfos;
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
+      'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
       'section.banner-section': SectionBannerSection;

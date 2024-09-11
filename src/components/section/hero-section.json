@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

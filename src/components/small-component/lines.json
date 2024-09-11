@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_small_component_lines",
+  "info": {
+    "displayName": "Lines",
+    "icon": "manyToOne"
+  },
+  "options": {},
+  "attributes": {
+    "insideLines": {
+      "displayName": "Inside Lines",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.inside-lines"
+    },
+    "classname": {
+      "type": "string"
+    }
+  }
+}
