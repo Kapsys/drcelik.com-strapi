@@ -17,7 +17,8 @@
       "components": [
         "section.banner-section",
         "section.hero-section",
-        "section.steps-section"
+        "section.steps-section",
+        "section.before-after-section"
       ]
     },
     "seo": {

@@ -16,6 +16,9 @@
       "type": "component",
       "repeatable": false,
       "component": "small-component.title-component"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

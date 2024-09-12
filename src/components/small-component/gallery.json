@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_small_component_galleries",
+  "info": {
+    "displayName": "Gallery",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

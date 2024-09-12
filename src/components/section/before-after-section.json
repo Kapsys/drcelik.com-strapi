@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_before_after_sections",
+  "info": {
+    "displayName": "Before After Section",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.button"
+    },
+    "gallery": {
+      "displayName": "Gallery",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.gallery"
+    },
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
+    }
+  }
+}

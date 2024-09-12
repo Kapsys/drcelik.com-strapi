@@ -138,6 +138,18 @@ export interface SmallComponentInfos extends Schema.Component {
   };
 }
 
+export interface SmallComponentGallery extends Schema.Component {
+  collectionName: 'components_small_component_galleries';
+  info: {
+    displayName: 'Gallery';
+    icon: 'grid';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SmallComponentFooterMenuItems extends Schema.Component {
   collectionName: 'components_small_component_footer_menu_items';
   info: {
@@ -235,6 +247,7 @@ export interface SectionStepsSection extends Schema.Component {
   attributes: {
     steps: Attribute.Component<'small-component.steps', true>;
     titleComponent: Attribute.Component<'small-component.title-component'>;
+    description: Attribute.Text;
   };
 }
 
@@ -288,6 +301,21 @@ export interface SectionFooter extends Schema.Component {
   };
 }
 
+export interface SectionBeforeAfterSection extends Schema.Component {
+  collectionName: 'components_section_before_after_sections';
+  info: {
+    displayName: 'Before After Section';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    button: Attribute.Component<'small-component.button'>;
+    gallery: Attribute.Component<'small-component.gallery', true>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionBannerSection extends Schema.Component {
   collectionName: 'components_section_banner_sections';
   info: {
@@ -314,6 +342,7 @@ declare module '@strapi/types' {
       'small-component.language-switcher': SmallComponentLanguageSwitcher;
       'small-component.inside-lines': SmallComponentInsideLines;
       'small-component.infos': SmallComponentInfos;
+      'small-component.gallery': SmallComponentGallery;
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.button': SmallComponentButton;
@@ -323,6 +352,7 @@ declare module '@strapi/types' {
       'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
+      'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
     }
   }

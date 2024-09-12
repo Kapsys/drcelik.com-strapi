@@ -955,7 +955,12 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
   attributes: {
     dynamicSections: Attribute.DynamicZone<
-      ['section.banner-section', 'section.hero-section', 'section.steps-section']
+      [
+        'section.banner-section',
+        'section.hero-section',
+        'section.steps-section',
+        'section.before-after-section'
+      ]
     >;
     seo: Attribute.Component<'shared.seo'>;
     title: Attribute.String;
