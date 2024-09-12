@@ -12,6 +12,21 @@
     },
     "description": {
       "type": "text"
+    },
+    "metricsBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.metrics-block"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.button"
+    },
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
     }
   }
 }

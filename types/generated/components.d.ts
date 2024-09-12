@@ -46,6 +46,19 @@ export interface SmallComponentSocials extends Schema.Component {
   };
 }
 
+export interface SmallComponentMetricsBlock extends Schema.Component {
+  collectionName: 'components_small_component_metrics_blocks';
+  info: {
+    displayName: 'Metrics Block';
+    icon: 'house';
+    description: '';
+  };
+  attributes: {
+    number: Attribute.Integer;
+    text: Attribute.String;
+  };
+}
+
 export interface SmallComponentMenuItems extends Schema.Component {
   collectionName: 'components_small_component_menu_items';
   info: {
@@ -209,6 +222,9 @@ export interface SectionHeroSection extends Schema.Component {
   attributes: {
     subtitle: Attribute.String;
     description: Attribute.Text;
+    metricsBlock: Attribute.Component<'small-component.metrics-block', true>;
+    button: Attribute.Component<'small-component.button'>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
   };
 }
 
@@ -265,6 +281,7 @@ declare module '@strapi/types' {
       'small-component.test': SmallComponentTest;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
       'small-component.socials': SmallComponentSocials;
+      'small-component.metrics-block': SmallComponentMetricsBlock;
       'small-component.menu-items': SmallComponentMenuItems;
       'small-component.lines': SmallComponentLines;
       'small-component.language-switcher': SmallComponentLanguageSwitcher;

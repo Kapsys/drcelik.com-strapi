@@ -18,6 +18,11 @@
         "section.banner-section",
         "section.hero-section"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

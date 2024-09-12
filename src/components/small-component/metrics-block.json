@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_small_component_metrics_blocks",
+  "info": {
+    "displayName": "Metrics Block",
+    "icon": "house",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}
