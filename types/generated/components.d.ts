@@ -11,6 +11,23 @@ export interface SmallComponentTitleComponent extends Schema.Component {
   };
 }
 
+export interface SmallComponentTestimonials extends Schema.Component {
+  collectionName: 'components_small_component_testimonials';
+  info: {
+    displayName: 'Testimonials';
+    icon: 'medium';
+  };
+  attributes: {
+    personPhoto: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    name: Attribute.String;
+    companyName: Attribute.String;
+    countryName: Attribute.String;
+    button: Attribute.Component<'small-component.button'>;
+    countryFlag: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SmallComponentTest extends Schema.Component {
   collectionName: 'components_small_component_tests';
   info: {
@@ -238,6 +255,21 @@ export interface SharedMetaSocial extends Schema.Component {
   };
 }
 
+export interface SectionTestimonialsSection extends Schema.Component {
+  collectionName: 'components_section_testimonials_sections';
+  info: {
+    displayName: 'Testimonials Section';
+    icon: 'layout';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    testimonials: Attribute.Component<'small-component.testimonials', true>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionStepsSection extends Schema.Component {
   collectionName: 'components_section_steps_sections';
   info: {
@@ -332,6 +364,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'small-component.title-component': SmallComponentTitleComponent;
+      'small-component.testimonials': SmallComponentTestimonials;
       'small-component.test': SmallComponentTest;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
       'small-component.steps': SmallComponentSteps;
@@ -348,6 +381,7 @@ declare module '@strapi/types' {
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
+      'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
       'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
