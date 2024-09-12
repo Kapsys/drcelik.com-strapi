@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_small_component_products_sliders",
+  "info": {
+    "displayName": "Products Slider",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageProduct": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

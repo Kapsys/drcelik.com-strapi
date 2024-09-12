@@ -45,17 +45,6 @@ export interface SmallComponentTestimonials extends Schema.Component {
   };
 }
 
-export interface SmallComponentTest extends Schema.Component {
-  collectionName: 'components_small_component_tests';
-  info: {
-    displayName: 'test';
-    icon: 'connector';
-  };
-  attributes: {
-    options: Attribute.Enumeration<['text-gradient-1', 'text-black', 'text-white']>;
-  };
-}
-
 export interface SmallComponentSubMenuItems extends Schema.Component {
   collectionName: 'components_small_component_sub_menu_items';
   info: {
@@ -94,6 +83,18 @@ export interface SmallComponentSocials extends Schema.Component {
   };
 }
 
+export interface SmallComponentProductsSlider extends Schema.Component {
+  collectionName: 'components_small_component_products_sliders';
+  info: {
+    displayName: 'Products Slider';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    imageProduct: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SmallComponentMetricsBlock extends Schema.Component {
   collectionName: 'components_small_component_metrics_blocks';
   info: {
@@ -117,6 +118,18 @@ export interface SmallComponentMenuItems extends Schema.Component {
     itemName: Attribute.String;
     itemLink: Attribute.String;
     subMenuItems: Attribute.Component<'small-component.sub-menu-items', true>;
+  };
+}
+
+export interface SmallComponentList extends Schema.Component {
+  collectionName: 'components_small_component_lists';
+  info: {
+    displayName: 'List';
+    icon: 'stack';
+  };
+  attributes: {
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    text: Attribute.String;
   };
 }
 
@@ -314,6 +327,23 @@ export interface SectionStepsSection extends Schema.Component {
   };
 }
 
+export interface SectionProductSection extends Schema.Component {
+  collectionName: 'components_section_product_sections';
+  info: {
+    displayName: 'Product Section';
+    description: '';
+  };
+  attributes: {
+    productSlider: Attribute.Component<'small-component.products-slider', true>;
+    imageText: Attribute.String;
+    phone: Attribute.Integer;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+    button: Attribute.Component<'small-component.button'>;
+    list: Attribute.Component<'small-component.list', true>;
+  };
+}
+
 export interface SectionHeroSection extends Schema.Component {
   collectionName: 'components_section_hero_sections';
   info: {
@@ -397,12 +427,13 @@ declare module '@strapi/types' {
       'small-component.videos': SmallComponentVideos;
       'small-component.title-component': SmallComponentTitleComponent;
       'small-component.testimonials': SmallComponentTestimonials;
-      'small-component.test': SmallComponentTest;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
       'small-component.steps': SmallComponentSteps;
       'small-component.socials': SmallComponentSocials;
+      'small-component.products-slider': SmallComponentProductsSlider;
       'small-component.metrics-block': SmallComponentMetricsBlock;
       'small-component.menu-items': SmallComponentMenuItems;
+      'small-component.list': SmallComponentList;
       'small-component.lines': SmallComponentLines;
       'small-component.language-switcher': SmallComponentLanguageSwitcher;
       'small-component.inside-lines': SmallComponentInsideLines;
@@ -416,6 +447,7 @@ declare module '@strapi/types' {
       'section.videos-section': SectionVideosSection;
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
+      'section.product-section': SectionProductSection;
       'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;

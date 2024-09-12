@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_section_product_sections",
+  "info": {
+    "displayName": "Product Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "productSlider": {
+      "displayName": "Products Slider",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.products-slider"
+    },
+    "imageText": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.button"
+    },
+    "list": {
+      "displayName": "List",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.list"
+    }
+  }
+}

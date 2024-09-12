@@ -20,7 +20,8 @@
         "section.steps-section",
         "section.before-after-section",
         "section.testimonials-section",
-        "section.videos-section"
+        "section.videos-section",
+        "section.product-section"
       ]
     },
     "seo": {
