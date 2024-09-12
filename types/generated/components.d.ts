@@ -222,6 +222,22 @@ export interface SmallComponentFooterItems extends Schema.Component {
   };
 }
 
+export interface SmallComponentFeaturesSection extends Schema.Component {
+  collectionName: 'components_small_component_features_sections';
+  info: {
+    displayName: 'Features Section';
+    icon: 'message';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    list: Attribute.Component<'small-component.list', true>;
+    button: Attribute.Component<'small-component.button'>;
+    rightImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SmallComponentButton extends Schema.Component {
   collectionName: 'components_small_component_buttons';
   info: {
@@ -441,6 +457,7 @@ declare module '@strapi/types' {
       'small-component.gallery': SmallComponentGallery;
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
       'small-component.footer-items': SmallComponentFooterItems;
+      'small-component.features-section': SmallComponentFeaturesSection;
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;

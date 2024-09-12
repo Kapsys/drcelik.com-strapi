@@ -21,7 +21,8 @@
         "section.before-after-section",
         "section.testimonials-section",
         "section.videos-section",
-        "section.product-section"
+        "section.product-section",
+        "small-component.features-section"
       ]
     },
     "seo": {
