@@ -19,7 +19,8 @@
         "section.hero-section",
         "section.steps-section",
         "section.before-after-section",
-        "section.testimonials-section"
+        "section.testimonials-section",
+        "section.videos-section"
       ]
     },
     "seo": {

@@ -1,5 +1,22 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SmallComponentVideos extends Schema.Component {
+  collectionName: 'components_small_component_videos';
+  info: {
+    displayName: 'Videos';
+    icon: 'slideshow';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    name: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    videoImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    videoUrl: Attribute.Text;
+    button: Attribute.Component<'small-component.button'>;
+  };
+}
+
 export interface SmallComponentTitleComponent extends Schema.Component {
   collectionName: 'components_small_component_title_components';
   info: {
@@ -255,6 +272,20 @@ export interface SharedMetaSocial extends Schema.Component {
   };
 }
 
+export interface SectionVideosSection extends Schema.Component {
+  collectionName: 'components_section_videos_sections';
+  info: {
+    displayName: 'Videos Section';
+    icon: 'monitor';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    videos: Attribute.Component<'small-component.videos', true>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionTestimonialsSection extends Schema.Component {
   collectionName: 'components_section_testimonials_sections';
   info: {
@@ -363,6 +394,7 @@ export interface SectionBannerSection extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'small-component.videos': SmallComponentVideos;
       'small-component.title-component': SmallComponentTitleComponent;
       'small-component.testimonials': SmallComponentTestimonials;
       'small-component.test': SmallComponentTest;
@@ -381,6 +413,7 @@ declare module '@strapi/types' {
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
+      'section.videos-section': SectionVideosSection;
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
       'section.hero-section': SectionHeroSection;

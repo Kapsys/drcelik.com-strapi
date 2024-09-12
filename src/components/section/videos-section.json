@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_videos_sections",
+  "info": {
+    "displayName": "Videos Section",
+    "icon": "monitor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "videos": {
+      "displayName": "Videos",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.videos"
+    },
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
+    }
+  }
+}
