@@ -34,6 +34,20 @@ export interface SmallComponentSubMenuItems extends Schema.Component {
   };
 }
 
+export interface SmallComponentSteps extends Schema.Component {
+  collectionName: 'components_small_component_steps';
+  info: {
+    displayName: 'Steps';
+    icon: 'database';
+  };
+  attributes: {
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+    imageStep: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SmallComponentSocials extends Schema.Component {
   collectionName: 'components_small_component_socials';
   info: {
@@ -212,6 +226,18 @@ export interface SharedMetaSocial extends Schema.Component {
   };
 }
 
+export interface SectionStepsSection extends Schema.Component {
+  collectionName: 'components_section_steps_sections';
+  info: {
+    displayName: 'Steps Section';
+    icon: 'oneToMany';
+  };
+  attributes: {
+    steps: Attribute.Component<'small-component.steps', true>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionHeroSection extends Schema.Component {
   collectionName: 'components_section_hero_sections';
   info: {
@@ -280,6 +306,7 @@ declare module '@strapi/types' {
       'small-component.title-component': SmallComponentTitleComponent;
       'small-component.test': SmallComponentTest;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
+      'small-component.steps': SmallComponentSteps;
       'small-component.socials': SmallComponentSocials;
       'small-component.metrics-block': SmallComponentMetricsBlock;
       'small-component.menu-items': SmallComponentMenuItems;
@@ -292,6 +319,7 @@ declare module '@strapi/types' {
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
+      'section.steps-section': SectionStepsSection;
       'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;

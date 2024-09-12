@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "section.banner-section",
-        "section.hero-section"
+        "section.hero-section",
+        "section.steps-section"
       ]
     },
     "seo": {

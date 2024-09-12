@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_steps_sections",
+  "info": {
+    "displayName": "Steps Section",
+    "icon": "oneToMany"
+  },
+  "options": {},
+  "attributes": {
+    "steps": {
+      "displayName": "Steps",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.steps"
+    },
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
+    }
+  }
+}
