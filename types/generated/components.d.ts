@@ -417,6 +417,7 @@ export interface SectionHeroSection extends Schema.Component {
     metricsBlock: Attribute.Component<'small-component.metrics-block', true>;
     button: Attribute.Component<'small-component.button'>;
     titleComponent: Attribute.Component<'small-component.title-component'>;
+    videoUrl: Attribute.Text;
   };
 }
 

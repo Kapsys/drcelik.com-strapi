@@ -27,6 +27,9 @@
       "type": "component",
       "repeatable": false,
       "component": "small-component.title-component"
+    },
+    "videoUrl": {
+      "type": "text"
     }
   }
 }
