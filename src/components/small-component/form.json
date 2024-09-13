@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_small_component_forms",
+  "info": {
+    "displayName": "Form",
+    "icon": "server",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "checkboxText": {
+      "type": "string"
+    },
+    "privacyPolicyText": {
+      "type": "string"
+    },
+    "privacyPolicyUrl": {
+      "type": "string"
+    },
+    "button": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.button"
+    }
+  }
+}

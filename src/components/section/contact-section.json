@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_section_contact_sections",
+  "info": {
+    "displayName": "Contact Section",
+    "icon": "oneToMany",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "contactInfos": {
+      "displayName": "Contact Infos",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.contact-infos"
+    },
+    "form": {
+      "displayName": "Form",
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.form"
+    },
+    "mapImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mapUrl": {
+      "type": "text"
+    },
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
+    }
+  }
+}

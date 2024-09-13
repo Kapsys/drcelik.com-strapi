@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_small_component_contact_infos",
+  "info": {
+    "displayName": "Contact Infos",
+    "icon": "oneToMany"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "text": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    }
+  }
+}

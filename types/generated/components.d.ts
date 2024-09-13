@@ -197,6 +197,25 @@ export interface SmallComponentGallery extends Schema.Component {
   };
 }
 
+export interface SmallComponentForm extends Schema.Component {
+  collectionName: 'components_small_component_forms';
+  info: {
+    displayName: 'Form';
+    icon: 'server';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+    message: Attribute.String;
+    checkboxText: Attribute.String;
+    privacyPolicyText: Attribute.String;
+    privacyPolicyUrl: Attribute.String;
+    button: Attribute.Component<'small-component.button'>;
+  };
+}
+
 export interface SmallComponentFooterMenuItems extends Schema.Component {
   collectionName: 'components_small_component_footer_menu_items';
   info: {
@@ -247,6 +266,19 @@ export interface SmallComponentFaq extends Schema.Component {
   attributes: {
     faqQuestion: Attribute.String;
     faqAnswer: Attribute.Text;
+  };
+}
+
+export interface SmallComponentContactInfos extends Schema.Component {
+  collectionName: 'components_small_component_contact_infos';
+  info: {
+    displayName: 'Contact Infos';
+    icon: 'oneToMany';
+  };
+  attributes: {
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    text: Attribute.String;
+    info: Attribute.String;
   };
 }
 
@@ -436,6 +468,23 @@ export interface SectionFaqSection extends Schema.Component {
   };
 }
 
+export interface SectionContactSection extends Schema.Component {
+  collectionName: 'components_section_contact_sections';
+  info: {
+    displayName: 'Contact Section';
+    icon: 'oneToMany';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    contactInfos: Attribute.Component<'small-component.contact-infos', true>;
+    form: Attribute.Component<'small-component.form'>;
+    mapImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mapUrl: Attribute.Text;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionBlogSection extends Schema.Component {
   collectionName: 'components_section_blog_sections';
   info: {
@@ -495,10 +544,12 @@ declare module '@strapi/types' {
       'small-component.inside-lines': SmallComponentInsideLines;
       'small-component.infos': SmallComponentInfos;
       'small-component.gallery': SmallComponentGallery;
+      'small-component.form': SmallComponentForm;
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.features-section': SmallComponentFeaturesSection;
       'small-component.faq': SmallComponentFaq;
+      'small-component.contact-infos': SmallComponentContactInfos;
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
@@ -510,6 +561,7 @@ declare module '@strapi/types' {
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
       'section.faq-section': SectionFaqSection;
+      'section.contact-section': SectionContactSection;
       'section.blog-section': SectionBlogSection;
       'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
