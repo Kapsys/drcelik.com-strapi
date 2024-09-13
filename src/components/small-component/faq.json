@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_small_component_faqs",
+  "info": {
+    "displayName": "Faq",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "faqQuestion": {
+      "type": "string"
+    },
+    "faqAnswer": {
+      "type": "text"
+    }
+  }
+}

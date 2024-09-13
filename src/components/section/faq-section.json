@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_faq_sections",
+  "info": {
+    "displayName": "FAQ Section",
+    "icon": "manyToOne",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "faq": {
+      "displayName": "Faq",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.faq"
+    },
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
+    }
+  }
+}

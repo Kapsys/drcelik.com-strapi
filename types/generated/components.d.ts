@@ -238,6 +238,18 @@ export interface SmallComponentFeaturesSection extends Schema.Component {
   };
 }
 
+export interface SmallComponentFaq extends Schema.Component {
+  collectionName: 'components_small_component_faqs';
+  info: {
+    displayName: 'Faq';
+    icon: 'chartPie';
+  };
+  attributes: {
+    faqQuestion: Attribute.String;
+    faqAnswer: Attribute.Text;
+  };
+}
+
 export interface SmallComponentButton extends Schema.Component {
   collectionName: 'components_small_component_buttons';
   info: {
@@ -410,6 +422,20 @@ export interface SectionFooter extends Schema.Component {
   };
 }
 
+export interface SectionFaqSection extends Schema.Component {
+  collectionName: 'components_section_faq_sections';
+  info: {
+    displayName: 'FAQ Section';
+    icon: 'manyToOne';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    faq: Attribute.Component<'small-component.faq', true>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionBlogSection extends Schema.Component {
   collectionName: 'components_section_blog_sections';
   info: {
@@ -472,6 +498,7 @@ declare module '@strapi/types' {
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.features-section': SmallComponentFeaturesSection;
+      'small-component.faq': SmallComponentFaq;
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
@@ -482,6 +509,7 @@ declare module '@strapi/types' {
       'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
+      'section.faq-section': SectionFaqSection;
       'section.blog-section': SectionBlogSection;
       'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
