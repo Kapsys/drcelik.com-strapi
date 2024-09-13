@@ -410,6 +410,20 @@ export interface SectionFooter extends Schema.Component {
   };
 }
 
+export interface SectionBlogSection extends Schema.Component {
+  collectionName: 'components_section_blog_sections';
+  info: {
+    displayName: 'Blog Section';
+    icon: 'cloud';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    button: Attribute.Component<'small-component.button'>;
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+  };
+}
+
 export interface SectionBeforeAfterSection extends Schema.Component {
   collectionName: 'components_section_before_after_sections';
   info: {
@@ -468,6 +482,7 @@ declare module '@strapi/types' {
       'section.hero-section': SectionHeroSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
+      'section.blog-section': SectionBlogSection;
       'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
     }

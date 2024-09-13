@@ -22,7 +22,8 @@
         "section.testimonials-section",
         "section.videos-section",
         "section.product-section",
-        "small-component.features-section"
+        "small-component.features-section",
+        "section.blog-section"
       ]
     },
     "seo": {
