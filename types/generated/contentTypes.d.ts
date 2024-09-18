@@ -942,6 +942,43 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Homepage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+    heroSection: Attribute.Component<'section.hero-section'>;
+    stepsSection: Attribute.Component<'section.steps-section'>;
+    beforeAfterSection: Attribute.Component<'section.before-after-section'>;
+    testimonialSection: Attribute.Component<'section.testimonials-section'>;
+    videosSection: Attribute.Component<'section.videos-section'>;
+    productSection: Attribute.Component<'section.product-section'>;
+    featuresSection: Attribute.Component<'small-component.features-section'>;
+    blogSection: Attribute.Component<'section.blog-section'>;
+    faqSection: Attribute.Component<'section.faq-section'>;
+    contactSection: Attribute.Component<'section.contact-section'>;
+    bannerSection: Attribute.Component<'section.banner-section'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::homepage.homepage', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::homepage.homepage', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -1029,6 +1066,7 @@ declare module '@strapi/types' {
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::global.global': ApiGlobalGlobal;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::page.page': ApiPagePage;
       'api::post.post': ApiPostPost;
     }

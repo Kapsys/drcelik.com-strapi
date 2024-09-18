@@ -1,0 +1,82 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.hero-section"
+    },
+    "stepsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.steps-section"
+    },
+    "beforeAfterSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.before-after-section"
+    },
+    "testimonialSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.testimonials-section"
+    },
+    "videosSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.videos-section"
+    },
+    "productSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.product-section"
+    },
+    "featuresSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.features-section"
+    },
+    "blogSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.blog-section"
+    },
+    "faqSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.faq-section"
+    },
+    "contactSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.contact-section"
+    },
+    "bannerSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.banner-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_small_component_sub_menus",
+  "info": {
+    "displayName": "Sub Menu",
+    "icon": "repeat"
+  },
+  "options": {},
+  "attributes": {
+    "subItemName": {
+      "type": "string"
+    },
+    "subItemLink": {
+      "type": "string"
+    }
+  }
+}

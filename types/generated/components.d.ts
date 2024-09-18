@@ -45,15 +45,28 @@ export interface SmallComponentTestimonials extends Schema.Component {
   };
 }
 
+export interface SmallComponentSubMenu extends Schema.Component {
+  collectionName: 'components_small_component_sub_menus';
+  info: {
+    displayName: 'Sub Menu';
+    icon: 'repeat';
+  };
+  attributes: {
+    subItemName: Attribute.String;
+    subItemLink: Attribute.String;
+  };
+}
+
 export interface SmallComponentSubMenuItems extends Schema.Component {
   collectionName: 'components_small_component_sub_menu_items';
   info: {
     displayName: 'Sub Menu Items';
     icon: 'collapse';
+    description: '';
   };
   attributes: {
-    subItemName: Attribute.String;
-    subItemLink: Attribute.String;
+    title: Attribute.String;
+    subMenu: Attribute.Component<'small-component.sub-menu', true>;
   };
 }
 
@@ -546,6 +559,7 @@ declare module '@strapi/types' {
       'small-component.videos': SmallComponentVideos;
       'small-component.title-component': SmallComponentTitleComponent;
       'small-component.testimonials': SmallComponentTestimonials;
+      'small-component.sub-menu': SmallComponentSubMenu;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
       'small-component.steps': SmallComponentSteps;
       'small-component.socials': SmallComponentSocials;
