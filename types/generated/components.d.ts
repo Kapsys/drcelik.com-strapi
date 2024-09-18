@@ -421,6 +421,19 @@ export interface SectionHeroSection extends Schema.Component {
   };
 }
 
+export interface SectionHeroPageSection extends Schema.Component {
+  collectionName: 'components_section_hero_page_sections';
+  info: {
+    displayName: 'Hero Page Section';
+    icon: 'cursor';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    button: Attribute.Component<'small-component.button'>;
+  };
+}
+
 export interface SectionHeader extends Schema.Component {
   collectionName: 'components_section_headers';
   info: {
@@ -559,6 +572,7 @@ declare module '@strapi/types' {
       'section.steps-section': SectionStepsSection;
       'section.product-section': SectionProductSection;
       'section.hero-section': SectionHeroSection;
+      'section.hero-page-section': SectionHeroPageSection;
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
       'section.faq-section': SectionFaqSection;

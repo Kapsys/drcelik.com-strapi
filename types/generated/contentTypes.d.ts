@@ -966,7 +966,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'small-component.features-section',
         'section.blog-section',
         'section.contact-section',
-        'section.faq-section'
+        'section.faq-section',
+        'section.hero-page-section'
       ]
     >;
     seo: Attribute.Component<'shared.seo'>;
