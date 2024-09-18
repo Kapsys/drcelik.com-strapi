@@ -991,13 +991,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     contactSection: Attribute.Component<'section.contact-section'>;
     bannerSection: Attribute.Component<'section.banner-section'>;
     seo: Attribute.Component<'shared.seo'>;
-    faqAnswer: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbarBalloon';
-        }
-      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
