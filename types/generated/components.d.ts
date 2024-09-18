@@ -278,13 +278,6 @@ export interface SmallComponentFaq extends Schema.Component {
   };
   attributes: {
     faqQuestion: Attribute.String;
-    faqAnswer: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbarBalloon';
-        }
-      >;
   };
 }
 
