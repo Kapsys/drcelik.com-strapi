@@ -8,6 +8,13 @@
   "attributes": {
     "faqQuestion": {
       "type": "string"
+    },
+    "faqAnswer": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBalloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
