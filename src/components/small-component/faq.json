@@ -10,7 +10,11 @@
       "type": "string"
     },
     "faqAnswer": {
-      "type": "text"
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBalloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

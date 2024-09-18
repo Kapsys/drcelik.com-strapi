@@ -917,6 +917,29 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactFormContactForm extends Schema.SingleType {
+  collectionName: 'contact_forms';
+  info: {
+    singularName: 'contact-form';
+    pluralName: 'contact-forms';
+    displayName: 'Contact Form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactSection: Attribute.Component<'section.contact-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::contact-form.contact-form', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::contact-form.contact-form', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -968,6 +991,13 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     contactSection: Attribute.Component<'section.contact-section'>;
     bannerSection: Attribute.Component<'section.banner-section'>;
     seo: Attribute.Component<'shared.seo'>;
+    faqAnswer: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1065,6 +1095,7 @@ declare module '@strapi/types' {
       'plugin::sitemap.sitemap': PluginSitemapSitemap;
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::page.page': ApiPagePage;

@@ -278,7 +278,13 @@ export interface SmallComponentFaq extends Schema.Component {
   };
   attributes: {
     faqQuestion: Attribute.String;
-    faqAnswer: Attribute.Text;
+    faqAnswer: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
   };
 }
 
@@ -428,7 +434,7 @@ export interface SectionHeroSection extends Schema.Component {
     subtitle: Attribute.String;
     description: Attribute.Text;
     metricsBlock: Attribute.Component<'small-component.metrics-block', true>;
-    button: Attribute.Component<'small-component.button'>;
+    button: Attribute.Component<'small-component.button', true>;
     titleComponent: Attribute.Component<'small-component.title-component'>;
     videoUrl: Attribute.Text;
   };
@@ -538,6 +544,7 @@ export interface SectionBeforeAfterSection extends Schema.Component {
     button: Attribute.Component<'small-component.button'>;
     gallery: Attribute.Component<'small-component.gallery', true>;
     titleComponent: Attribute.Component<'small-component.title-component'>;
+    isMinified: Attribute.Boolean;
   };
 }
 

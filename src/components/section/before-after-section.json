@@ -25,6 +25,9 @@
       "type": "component",
       "repeatable": false,
       "component": "small-component.title-component"
+    },
+    "isMinified": {
+      "type": "boolean"
     }
   }
 }
