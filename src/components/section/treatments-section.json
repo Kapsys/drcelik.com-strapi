@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_treatments_sections",
+  "info": {
+    "displayName": "Treatments Section",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+  "titleComponent": {
+    "type": "component",
+    "repeatable": false,
+    "component": "small-component.title-component"
+  },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.button"
+    },
+    "expertiseItems": {
+      "displayName": "Expertise Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "section.expertise-items"
+    }
+  }
+}

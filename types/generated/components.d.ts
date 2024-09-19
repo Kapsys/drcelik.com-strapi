@@ -378,6 +378,21 @@ export interface SectionVideosSection extends Schema.Component {
   };
 }
 
+export interface SectionTreatmentsSection extends Schema.Component {
+  collectionName: 'components_section_treatments_sections';
+  info: {
+    displayName: 'Treatments Section';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+    description: Attribute.Text;
+    button: Attribute.Component<'small-component.button'>;
+    expertiseItems: Attribute.Component<'section.expertise-items', true>;
+  };
+}
+
 export interface SectionTestimonialsSection extends Schema.Component {
   collectionName: 'components_section_testimonials_sections';
   info: {
@@ -501,6 +516,20 @@ export interface SectionFaqSection extends Schema.Component {
   };
 }
 
+export interface SectionExpertiseItems extends Schema.Component {
+  collectionName: 'components_section_expertise_items';
+  info: {
+    displayName: 'Expertise Items';
+    icon: 'server';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    button: Attribute.Component<'small-component.button'>;
+  };
+}
+
 export interface SectionContactSection extends Schema.Component {
   collectionName: 'components_section_contact_sections';
   info: {
@@ -589,6 +618,7 @@ declare module '@strapi/types' {
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
       'section.videos-section': SectionVideosSection;
+      'section.treatments-section': SectionTreatmentsSection;
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
       'section.product-section': SectionProductSection;
@@ -597,6 +627,7 @@ declare module '@strapi/types' {
       'section.header': SectionHeader;
       'section.footer': SectionFooter;
       'section.faq-section': SectionFaqSection;
+      'section.expertise-items': SectionExpertiseItems;
       'section.contact-section': SectionContactSection;
       'section.blog-section': SectionBlogSection;
       'section.before-after-section': SectionBeforeAfterSection;
