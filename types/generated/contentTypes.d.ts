@@ -917,6 +917,29 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactBannerContactBanner extends Schema.SingleType {
+  collectionName: 'contact_banners';
+  info: {
+    singularName: 'contact-banner';
+    pluralName: 'contact-banners';
+    displayName: 'Contact Banner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerSection: Attribute.Component<'section.banner-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::contact-banner.contact-banner', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::contact-banner.contact-banner', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiContactFormContactForm extends Schema.SingleType {
   collectionName: 'contact_forms';
   info: {
@@ -1136,6 +1159,7 @@ declare module '@strapi/types' {
       'plugin::sitemap.sitemap': PluginSitemapSitemap;
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::contact-banner.contact-banner': ApiContactBannerContactBanner;
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::faq.faq': ApiFaqFaq;
       'api::form.form': ApiFormForm;

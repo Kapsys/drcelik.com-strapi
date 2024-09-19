@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_banners",
+  "info": {
+    "singularName": "contact-banner",
+    "pluralName": "contact-banners",
+    "displayName": "Contact Banner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bannerSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.banner-section"
+    }
+  }
+}
