@@ -198,6 +198,28 @@ export interface SmallComponentInfos extends Schema.Component {
   };
 }
 
+export interface SmallComponentImages extends Schema.Component {
+  collectionName: 'components_small_component_images';
+  info: {
+    displayName: 'Images';
+    icon: 'television';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
+    isImageLeft: Attribute.Boolean;
+    isColoredBg: Attribute.Boolean;
+  };
+}
+
 export interface SmallComponentGallery extends Schema.Component {
   collectionName: 'components_small_component_galleries';
   info: {
@@ -438,6 +460,18 @@ export interface SectionProductSection extends Schema.Component {
   };
 }
 
+export interface SectionImagesSection extends Schema.Component {
+  collectionName: 'components_section_images_sections';
+  info: {
+    displayName: 'Images Section';
+    icon: 'database';
+    description: '';
+  };
+  attributes: {
+    images: Attribute.Component<'small-component.images', true>;
+  };
+}
+
 export interface SectionHeroSection extends Schema.Component {
   collectionName: 'components_section_hero_sections';
   info: {
@@ -607,6 +641,7 @@ declare module '@strapi/types' {
       'small-component.language-switcher': SmallComponentLanguageSwitcher;
       'small-component.inside-lines': SmallComponentInsideLines;
       'small-component.infos': SmallComponentInfos;
+      'small-component.images': SmallComponentImages;
       'small-component.gallery': SmallComponentGallery;
       'small-component.form': SmallComponentForm;
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
@@ -622,6 +657,7 @@ declare module '@strapi/types' {
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
       'section.product-section': SectionProductSection;
+      'section.images-section': SectionImagesSection;
       'section.hero-section': SectionHeroSection;
       'section.hero-page-section': SectionHeroPageSection;
       'section.header': SectionHeader;

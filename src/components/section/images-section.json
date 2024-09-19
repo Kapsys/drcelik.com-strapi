@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_images_sections",
+  "info": {
+    "displayName": "Images Section",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "displayName": "Images",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.images"
+    }
+  }
+}
