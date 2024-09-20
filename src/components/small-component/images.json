@@ -32,6 +32,11 @@
     },
     "isColoredBg": {
       "type": "boolean"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.list"
     }
   }
 }
