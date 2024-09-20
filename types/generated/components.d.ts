@@ -208,6 +208,7 @@ export interface SmallComponentImages extends Schema.Component {
   attributes: {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Attribute.String;
+    subtitle: Attribute.String;
     description: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
