@@ -573,7 +573,9 @@ export interface SectionDotsSection extends Schema.Component {
     icon: 'clock';
   };
   attributes: {
+    title: Attribute.String;
     titleComponent: Attribute.Component<'small-component.title-component'>;
+    description: Attribute.Text;
     images: Attribute.Component<'small-component.images', true>;
   };
 }

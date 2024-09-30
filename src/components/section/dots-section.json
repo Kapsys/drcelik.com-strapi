@@ -6,11 +6,17 @@
   },
   "options": {},
   "attributes": {
+  "title": {
+    "type": "string"
+  },
     "titleComponent": {
       "type": "component",
       "repeatable": false,
       "component": "small-component.title-component"
     },
+    "description": {
+    "type": "text"
+  },
      "images": {
       "displayName": "Images",
       "type": "component",
