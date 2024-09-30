@@ -566,6 +566,18 @@ export interface SectionExpertiseItems extends Schema.Component {
   };
 }
 
+export interface SectionDotsSection extends Schema.Component {
+  collectionName: 'components_section_dots_sections';
+  info: {
+    displayName: 'Dots Section';
+    icon: 'clock';
+  };
+  attributes: {
+    titleComponent: Attribute.Component<'small-component.title-component'>;
+    images: Attribute.Component<'small-component.images', true>;
+  };
+}
+
 export interface SectionContactSection extends Schema.Component {
   collectionName: 'components_section_contact_sections';
   info: {
@@ -666,6 +678,7 @@ declare module '@strapi/types' {
       'section.footer': SectionFooter;
       'section.faq-section': SectionFaqSection;
       'section.expertise-items': SectionExpertiseItems;
+      'section.dots-section': SectionDotsSection;
       'section.contact-section': SectionContactSection;
       'section.blog-section': SectionBlogSection;
       'section.before-after-section': SectionBeforeAfterSection;

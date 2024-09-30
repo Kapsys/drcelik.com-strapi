@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_dots_sections",
+  "info": {
+    "displayName": "Dots Section",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "titleComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.title-component"
+    },
+     "images": {
+      "displayName": "Images",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.images"
+    }
+  }
+}

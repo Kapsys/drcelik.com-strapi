@@ -28,7 +28,8 @@
         "section.faq-section",
         "section.hero-page-section",
         "section.treatments-section",
-        "section.images-section"
+        "section.images-section",
+        "section.dots-section"
       ]
     },
     "seo": {
