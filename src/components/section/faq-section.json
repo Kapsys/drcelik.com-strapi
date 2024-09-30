@@ -7,6 +7,9 @@
   },
   "options": {},
   "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
     "description": {
       "type": "text"
     },
