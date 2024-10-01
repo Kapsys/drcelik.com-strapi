@@ -496,11 +496,13 @@ export interface SectionHeroPageSection extends Schema.Component {
   info: {
     displayName: 'Hero Page Section';
     icon: 'cursor';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
     button: Attribute.Component<'small-component.button'>;
+    backgroundImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
