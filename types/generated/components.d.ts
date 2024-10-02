@@ -501,7 +501,7 @@ export interface SectionHeroPageSection extends Schema.Component {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    button: Attribute.Component<'small-component.button'>;
+    button: Attribute.Component<'small-component.button', true>;
     backgroundImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }

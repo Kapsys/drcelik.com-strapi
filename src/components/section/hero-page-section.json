@@ -15,7 +15,7 @@
     },
     "button": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "small-component.button"
     },
     "backgroundImage": {
