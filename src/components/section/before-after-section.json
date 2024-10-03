@@ -28,6 +28,9 @@
     },
     "isMinified": {
       "type": "boolean"
-    }
+    },
+    "isColoredBackground": {
+      "type": "boolean"
+    } 
   }
 }

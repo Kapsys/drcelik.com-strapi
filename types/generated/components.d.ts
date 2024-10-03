@@ -627,6 +627,7 @@ export interface SectionBeforeAfterSection extends Schema.Component {
     gallery: Attribute.Component<'small-component.gallery', true>;
     titleComponent: Attribute.Component<'small-component.title-component'>;
     isMinified: Attribute.Boolean;
+    isColoredBackground: Attribute.Boolean;
   };
 }
 
