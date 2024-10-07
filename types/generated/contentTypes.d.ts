@@ -917,6 +917,29 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categoryName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::category.category', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::category.category', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiContactBannerContactBanner extends Schema.SingleType {
   collectionName: 'contact_banners';
   info: {
@@ -1105,6 +1128,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     seo: Attribute.Component<'shared.seo'>;
     title: Attribute.String;
     slug: Attribute.String;
+    categories: Attribute.Relation<'api::page.page', 'oneToMany', 'api::category.category'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1160,6 +1184,7 @@ declare module '@strapi/types' {
       'plugin::sitemap.sitemap': PluginSitemapSitemap;
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::category.category': ApiCategoryCategory;
       'api::contact-banner.contact-banner': ApiContactBannerContactBanner;
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::faq.faq': ApiFaqFaq;
