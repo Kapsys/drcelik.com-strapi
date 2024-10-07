@@ -454,11 +454,11 @@ export interface SectionProductSection extends Schema.Component {
   attributes: {
     productSlider: Attribute.Component<'small-component.products-slider', true>;
     imageText: Attribute.String;
-    phone: Attribute.Integer;
     subtitle: Attribute.String;
     title: Attribute.String;
     button: Attribute.Component<'small-component.button'>;
     list: Attribute.Component<'small-component.list', true>;
+    phone: Attribute.String;
   };
 }
 

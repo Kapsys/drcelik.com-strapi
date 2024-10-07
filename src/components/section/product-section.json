@@ -15,9 +15,6 @@
     "imageText": {
       "type": "string"
     },
-    "phone": {
-      "type": "integer"
-    },
     "subtitle": {
       "type": "string"
     },
@@ -34,6 +31,9 @@
       "type": "component",
       "repeatable": true,
       "component": "small-component.list"
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }
