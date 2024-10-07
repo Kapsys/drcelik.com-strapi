@@ -286,7 +286,13 @@ export interface SmallComponentFeaturesSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    description: Attribute.Text;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
     list: Attribute.Component<'small-component.list', true>;
     button: Attribute.Component<'small-component.button'>;
     rightImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
