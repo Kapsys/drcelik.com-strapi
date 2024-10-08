@@ -923,12 +923,14 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     categoryName: Attribute.String;
+    categorySlug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1160,6 +1162,30 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubCategorySubCategory extends Schema.CollectionType {
+  collectionName: 'sub_categories';
+  info: {
+    singularName: 'sub-category';
+    pluralName: 'sub-categories';
+    displayName: 'SubCategory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    subcategoryName: Attribute.String;
+    subcategorySlug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::sub-category.sub-category', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::sub-category.sub-category', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1193,6 +1219,7 @@ declare module '@strapi/types' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::page.page': ApiPagePage;
       'api::post.post': ApiPostPost;
+      'api::sub-category.sub-category': ApiSubCategorySubCategory;
     }
   }
 }

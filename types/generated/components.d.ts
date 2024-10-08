@@ -242,14 +242,26 @@ export interface SmallComponentForm extends Schema.Component {
     description: '';
   };
   attributes: {
-    name: Attribute.String;
-    email: Attribute.String;
-    phone: Attribute.String;
-    message: Attribute.String;
+    formInputs: Attribute.Component<'small-component.form-inputs', true>;
     checkboxText: Attribute.String;
     privacyPolicyText: Attribute.String;
     privacyPolicyUrl: Attribute.String;
     button: Attribute.Component<'small-component.button'>;
+  };
+}
+
+export interface SmallComponentFormInputs extends Schema.Component {
+  collectionName: 'components_small_component_form_inputs';
+  info: {
+    displayName: 'Form Inputs';
+    icon: 'cup';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    placeholder: Attribute.String;
+    type: Attribute.Enumeration<['countrySelect', 'text', 'email', 'phone', 'textarea']>;
+    countrySelect: Attribute.Enumeration<['text', 'email', 'phone', 'textarea']>;
   };
 }
 
@@ -323,11 +335,13 @@ export interface SmallComponentContactInfos extends Schema.Component {
   info: {
     displayName: 'Contact Infos';
     icon: 'oneToMany';
+    description: '';
   };
   attributes: {
     icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text: Attribute.String;
     info: Attribute.String;
+    link: Attribute.String;
   };
 }
 
@@ -670,6 +684,7 @@ declare module '@strapi/types' {
       'small-component.images': SmallComponentImages;
       'small-component.gallery': SmallComponentGallery;
       'small-component.form': SmallComponentForm;
+      'small-component.form-inputs': SmallComponentFormInputs;
       'small-component.footer-menu-items': SmallComponentFooterMenuItems;
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.features-section': SmallComponentFeaturesSection;

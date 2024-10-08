@@ -7,17 +7,11 @@
   },
   "options": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
-    "email": {
-      "type": "string"
-    },
-    "phone": {
-      "type": "string"
-    },
-    "message": {
-      "type": "string"
+    "formInputs": {
+      "displayName": "Form Inputs",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.form-inputs"
     },
     "checkboxText": {
       "type": "string"

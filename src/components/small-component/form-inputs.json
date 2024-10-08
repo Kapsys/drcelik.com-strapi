@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_small_component_form_inputs",
+  "info": {
+    "displayName": "Form Inputs",
+    "icon": "cup",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "countrySelect",
+        "text",
+        "email",
+        "phone",
+        "textarea"
+      ]
+    },
+    "countrySelect": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "phone",
+        "textarea"
+      ]
+    }
+  }
+}

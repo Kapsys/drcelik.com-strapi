@@ -2,24 +2,29 @@
   "collectionName": "components_small_component_contact_infos",
   "info": {
     "displayName": "Contact Infos",
-    "icon": "oneToMany"
+    "icon": "oneToMany",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "text": {
       "type": "string"
     },
     "info": {
+      "type": "string"
+    },
+    "link": {
       "type": "string"
     }
   }
