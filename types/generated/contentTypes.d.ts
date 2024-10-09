@@ -1130,8 +1130,8 @@ export interface ApiPagePage extends Schema.CollectionType {
     seo: Attribute.Component<'shared.seo'>;
     title: Attribute.String;
     slug: Attribute.String;
-    subcategory: Attribute.Component<'small-component.subcategory', true> & Attribute.Required;
-    category: Attribute.Component<'small-component.category', true> & Attribute.Required;
+    subcategory: Attribute.Component<'small-component.subcategory', true>;
+    category: Attribute.Component<'small-component.category', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

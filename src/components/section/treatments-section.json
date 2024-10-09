@@ -25,6 +25,9 @@
       "type": "component",
       "repeatable": true,
       "component": "section.expertise-items"
-    }
+    },
+    "isColoredBackground": {
+      "type": "boolean"
+    } 
   }
 }

@@ -458,6 +458,7 @@ export interface SectionTreatmentsSection extends Schema.Component {
     description: Attribute.Text;
     button: Attribute.Component<'small-component.button'>;
     expertiseItems: Attribute.Component<'section.expertise-items', true>;
+    isColoredBackground: Attribute.Boolean;
   };
 }
 
