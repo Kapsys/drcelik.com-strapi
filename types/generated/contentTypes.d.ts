@@ -1130,7 +1130,8 @@ export interface ApiPagePage extends Schema.CollectionType {
     seo: Attribute.Component<'shared.seo'>;
     title: Attribute.String;
     slug: Attribute.String;
-    categories: Attribute.Relation<'api::page.page', 'oneToMany', 'api::category.category'>;
+    category: Attribute.Relation<'api::page.page', 'oneToOne', 'api::category.category'>;
+    subcategory: Attribute.Relation<'api::page.page', 'oneToOne', 'api::sub-category.sub-category'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
