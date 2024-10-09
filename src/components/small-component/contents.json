@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_small_component_contents",
+  "info": {
+    "displayName": "Contents",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

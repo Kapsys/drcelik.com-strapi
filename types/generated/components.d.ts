@@ -342,6 +342,18 @@ export interface SmallComponentFaq extends Schema.Component {
   };
 }
 
+export interface SmallComponentContents extends Schema.Component {
+  collectionName: 'components_small_component_contents';
+  info: {
+    displayName: 'Contents';
+    icon: 'gate';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface SmallComponentContactInfos extends Schema.Component {
   collectionName: 'components_small_component_contact_infos';
   info: {
@@ -741,6 +753,7 @@ declare module '@strapi/types' {
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.features-section': SmallComponentFeaturesSection;
       'small-component.faq': SmallComponentFaq;
+      'small-component.contents': SmallComponentContents;
       'small-component.contact-infos': SmallComponentContactInfos;
       'small-component.category': SmallComponentCategory;
       'small-component.button': SmallComponentButton;

@@ -1147,6 +1147,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     singularName: 'post';
     pluralName: 'posts';
     displayName: 'Post';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1154,6 +1155,11 @@ export interface ApiPostPost extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     slug: Attribute.String;
+    description: Attribute.Text;
+    featuredImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    contents: Attribute.Component<'small-component.contents', true>;
+    recentPostTitle: Attribute.String;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
