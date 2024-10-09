@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_blog_category_sections",
+  "info": {
+    "displayName": "Blog Category Section",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "searchPlaceholder": {
+      "type": "string"
+    },
+    "blogCategories": {
+      "displayName": "Blog Categories",
+      "type": "component",
+      "repeatable": true,
+      "component": "section.blog-categories"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.button"
+    }
+  }
+}

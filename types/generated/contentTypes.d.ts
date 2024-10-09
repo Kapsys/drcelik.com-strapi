@@ -1124,13 +1124,14 @@ export interface ApiPagePage extends Schema.CollectionType {
         'section.hero-page-section',
         'section.treatments-section',
         'section.images-section',
-        'section.dots-section'
+        'section.dots-section',
+        'section.blog-category-section'
       ]
     >;
     seo: Attribute.Component<'shared.seo'>;
     title: Attribute.String;
     slug: Attribute.String;
-    subcategory: Attribute.Component<'small-component.subcategory', true>;
+    category: Attribute.Enumeration<['about-me', 'smile-transformation']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

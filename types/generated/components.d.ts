@@ -659,6 +659,32 @@ export interface SectionBlogSection extends Schema.Component {
   };
 }
 
+export interface SectionBlogCategorySection extends Schema.Component {
+  collectionName: 'components_section_blog_category_sections';
+  info: {
+    displayName: 'Blog Category Section';
+    icon: 'layout';
+    description: '';
+  };
+  attributes: {
+    searchPlaceholder: Attribute.String;
+    blogCategories: Attribute.Component<'section.blog-categories', true>;
+    button: Attribute.Component<'small-component.button', true>;
+  };
+}
+
+export interface SectionBlogCategories extends Schema.Component {
+  collectionName: 'components_section_blog_categories';
+  info: {
+    displayName: 'Blog Categories';
+    icon: 'message';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+  };
+}
+
 export interface SectionBeforeAfterSection extends Schema.Component {
   collectionName: 'components_section_before_after_sections';
   info: {
@@ -735,6 +761,8 @@ declare module '@strapi/types' {
       'section.dots-section': SectionDotsSection;
       'section.contact-section': SectionContactSection;
       'section.blog-section': SectionBlogSection;
+      'section.blog-category-section': SectionBlogCategorySection;
+      'section.blog-categories': SectionBlogCategories;
       'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
     }

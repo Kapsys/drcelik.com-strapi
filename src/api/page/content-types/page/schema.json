@@ -29,7 +29,8 @@
         "section.hero-page-section",
         "section.treatments-section",
         "section.images-section",
-        "section.dots-section"
+        "section.dots-section",
+        "section.blog-category-section"
       ]
     },
     "seo": {
@@ -43,12 +44,12 @@
     "slug": {
       "type": "string"
     },
-    "subcategory": {
-      "displayName": "subcategory",
-      "type": "component",
-      "repeatable": true,
-      "component": "small-component.subcategory",
-      "required": false
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "about-me",
+        "smile-transformation"
+      ]
     }
   }
 }
