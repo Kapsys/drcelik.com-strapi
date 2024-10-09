@@ -1131,7 +1131,6 @@ export interface ApiPagePage extends Schema.CollectionType {
     title: Attribute.String;
     slug: Attribute.String;
     subcategory: Attribute.Component<'small-component.subcategory', true>;
-    category: Attribute.Component<'small-component.category', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

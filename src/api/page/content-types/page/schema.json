@@ -49,13 +49,6 @@
       "repeatable": true,
       "component": "small-component.subcategory",
       "required": false
-    },
-    "category": {
-      "displayName": "category",
-      "type": "component",
-      "repeatable": true,
-      "component": "small-component.category",
-      "required": false
     }
   }
 }
