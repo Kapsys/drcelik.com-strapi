@@ -43,15 +43,19 @@
     "slug": {
       "type": "string"
     },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
-    },
     "subcategory": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::sub-category.sub-category"
+      "displayName": "subcategory",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.subcategory",
+      "required": true
+    },
+    "category": {
+      "displayName": "category",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.category",
+      "required": true
     }
   }
 }

@@ -45,6 +45,18 @@ export interface SmallComponentTestimonials extends Schema.Component {
   };
 }
 
+export interface SmallComponentSubcategory extends Schema.Component {
+  collectionName: 'components_small_component_subcategories';
+  info: {
+    displayName: 'subcategory';
+    icon: 'information';
+  };
+  attributes: {
+    name: Attribute.String;
+    slug: Attribute.String;
+  };
+}
+
 export interface SmallComponentSubMenu extends Schema.Component {
   collectionName: 'components_small_component_sub_menus';
   info: {
@@ -342,6 +354,18 @@ export interface SmallComponentContactInfos extends Schema.Component {
     text: Attribute.String;
     info: Attribute.String;
     link: Attribute.String;
+  };
+}
+
+export interface SmallComponentCategory extends Schema.Component {
+  collectionName: 'components_small_component_categories';
+  info: {
+    displayName: 'category';
+    icon: 'bulletList';
+  };
+  attributes: {
+    name: Attribute.String;
+    slug: Attribute.String;
   };
 }
 
@@ -669,6 +693,7 @@ declare module '@strapi/types' {
       'small-component.videos': SmallComponentVideos;
       'small-component.title-component': SmallComponentTitleComponent;
       'small-component.testimonials': SmallComponentTestimonials;
+      'small-component.subcategory': SmallComponentSubcategory;
       'small-component.sub-menu': SmallComponentSubMenu;
       'small-component.sub-menu-items': SmallComponentSubMenuItems;
       'small-component.steps': SmallComponentSteps;
@@ -690,6 +715,7 @@ declare module '@strapi/types' {
       'small-component.features-section': SmallComponentFeaturesSection;
       'small-component.faq': SmallComponentFaq;
       'small-component.contact-infos': SmallComponentContactInfos;
+      'small-component.category': SmallComponentCategory;
       'small-component.button': SmallComponentButton;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;

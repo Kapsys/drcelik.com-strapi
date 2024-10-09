@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_small_component_subcategories",
+  "info": {
+    "displayName": "subcategory",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
