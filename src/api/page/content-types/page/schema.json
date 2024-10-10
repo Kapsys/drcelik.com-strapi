@@ -51,7 +51,8 @@
         "smile-transformation",
         "general",
         "our-treatments"
-      ]
+      ],
+      "required": true
     },
     "subcategory": {
       "type": "enumeration",
@@ -62,7 +63,8 @@
         "implant-treatments",
         "oral-and-maxillofacial-surgery",
         "periodontology"
-      ]
+      ],
+      "required": true
     }
   }
 }
