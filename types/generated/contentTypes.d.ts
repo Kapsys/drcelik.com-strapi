@@ -1299,7 +1299,7 @@ export interface ApiPostPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    categories: Attribute.Relation<'api::post.post', 'oneToMany', 'api::category.category'>;
+    category: Attribute.Relation<'api::post.post', 'oneToOne', 'api::category.category'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

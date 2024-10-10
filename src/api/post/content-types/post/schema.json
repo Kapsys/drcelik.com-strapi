@@ -85,9 +85,9 @@
         }
       }
     },
-    "categories": {
+    "category": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::category.category"
     }
   }
