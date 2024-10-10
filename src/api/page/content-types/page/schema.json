@@ -48,7 +48,21 @@
       "type": "enumeration",
       "enum": [
         "about-me",
-        "smile-transformation"
+        "smile-transformation",
+        "client-experiences",
+        "our-treatments",
+        "contacts"
+      ]
+    },
+    "subcategory": {
+      "type": "enumeration",
+      "enum": [
+        "about-me",
+        "treatments",
+        "general",
+        "implant-treatments",
+        "oral-and-maxillofacial-surgery",
+        "periodontology"
       ]
     }
   }

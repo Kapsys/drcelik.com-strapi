@@ -1131,7 +1131,19 @@ export interface ApiPagePage extends Schema.CollectionType {
     seo: Attribute.Component<'shared.seo'>;
     title: Attribute.String;
     slug: Attribute.String;
-    category: Attribute.Enumeration<['about-me', 'smile-transformation']>;
+    category: Attribute.Enumeration<
+      ['about-me', 'smile-transformation', 'client-experiences', 'our-treatments', 'contacts']
+    >;
+    subcategory: Attribute.Enumeration<
+      [
+        'about-me',
+        'treatments',
+        'general',
+        'implant-treatments',
+        'oral-and-maxillofacial-surgery',
+        'periodontology'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
