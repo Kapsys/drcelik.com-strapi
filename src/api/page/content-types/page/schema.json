@@ -49,9 +49,8 @@
       "enum": [
         "about-me",
         "smile-transformation",
-        "client-experiences",
-        "our-treatments",
-        "contacts"
+        "general",
+        "our-treatments"
       ]
     },
     "subcategory": {

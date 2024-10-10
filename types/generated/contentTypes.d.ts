@@ -917,31 +917,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    categoryName: Attribute.String;
-    categorySlug: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::category.category', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::category.category', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
-  };
-}
-
 export interface ApiContactBannerContactBanner extends Schema.SingleType {
   collectionName: 'contact_banners';
   info: {
@@ -1132,7 +1107,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     title: Attribute.String;
     slug: Attribute.String;
     category: Attribute.Enumeration<
-      ['about-me', 'smile-transformation', 'client-experiences', 'our-treatments', 'contacts']
+      ['about-me', 'smile-transformation', 'general', 'our-treatments']
     >;
     subcategory: Attribute.Enumeration<
       [
@@ -1181,30 +1156,6 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
-export interface ApiSubCategorySubCategory extends Schema.CollectionType {
-  collectionName: 'sub_categories';
-  info: {
-    singularName: 'sub-category';
-    pluralName: 'sub-categories';
-    displayName: 'SubCategory';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    subcategoryName: Attribute.String;
-    subcategorySlug: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::sub-category.sub-category', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::sub-category.sub-category', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1229,7 +1180,6 @@ declare module '@strapi/types' {
       'plugin::sitemap.sitemap': PluginSitemapSitemap;
       'plugin::sitemap.sitemap-cache': PluginSitemapSitemapCache;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::category.category': ApiCategoryCategory;
       'api::contact-banner.contact-banner': ApiContactBannerContactBanner;
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::faq.faq': ApiFaqFaq;
@@ -1238,7 +1188,6 @@ declare module '@strapi/types' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::page.page': ApiPagePage;
       'api::post.post': ApiPostPost;
-      'api::sub-category.sub-category': ApiSubCategorySubCategory;
     }
   }
 }
