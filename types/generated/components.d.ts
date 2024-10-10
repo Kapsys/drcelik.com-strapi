@@ -229,7 +229,7 @@ export interface SmallComponentImages extends Schema.Component {
         }
       >;
     isImageLeft: Attribute.Boolean;
-    isColoredBg: Attribute.Boolean;
+    isBigImage: Attribute.Boolean;
     list: Attribute.Component<'small-component.list', true>;
   };
 }

@@ -33,7 +33,7 @@
     "isImageLeft": {
       "type": "boolean"
     },
-    "isColoredBg": {
+    "isBigImage": {
       "type": "boolean"
     },
     "list": {
