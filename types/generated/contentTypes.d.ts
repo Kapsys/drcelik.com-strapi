@@ -923,13 +923,29 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    categoryName: Attribute.String;
-    categorySlug: Attribute.String;
+    categoryName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categorySlug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -938,6 +954,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     updatedBy: Attribute.Relation<'api::category.category', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::category.category'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1019,17 +1041,44 @@ export interface ApiFormForm extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String;
-    email: Attribute.Email;
-    phone: Attribute.String;
-    message: Attribute.String;
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.Email &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    message: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> & Attribute.Private;
     updatedBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> & Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<'api::form.form', 'oneToMany', 'api::form.form'>;
+    locale: Attribute.String;
   };
 }
 
@@ -1106,6 +1155,11 @@ export interface ApiPagePage extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     dynamicSections: Attribute.DynamicZone<
       [
@@ -1126,14 +1180,39 @@ export interface ApiPagePage extends Schema.CollectionType {
         'section.dots-section',
         'section.blog-category-section'
       ]
-    >;
-    seo: Attribute.Component<'shared.seo'>;
-    title: Attribute.String;
-    slug: Attribute.String;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     category: Attribute.Enumeration<
       ['about-me', 'smile-transformation', 'general', 'our-treatments']
     > &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     subcategory: Attribute.Enumeration<
       [
         'about-me',
@@ -1144,13 +1223,20 @@ export interface ApiPagePage extends Schema.CollectionType {
         'periodontology'
       ]
     > &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> & Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> & Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<'api::page.page', 'oneToMany', 'api::page.page'>;
+    locale: Attribute.String;
   };
 }
 
@@ -1165,14 +1251,54 @@ export interface ApiPostPost extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
-    slug: Attribute.String;
-    description: Attribute.Text;
-    featuredImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    contents: Attribute.Component<'small-component.contents', true>;
-    recentPostTitle: Attribute.String;
-    seo: Attribute.Component<'shared.seo'>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    featuredImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contents: Attribute.Component<'small-component.contents', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    recentPostTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     categories: Attribute.Relation<'api::post.post', 'oneToMany', 'api::category.category'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1180,6 +1306,8 @@ export interface ApiPostPost extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> & Attribute.Private;
     updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> & Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<'api::post.post', 'oneToMany', 'api::post.post'>;
+    locale: Attribute.String;
   };
 }
 
