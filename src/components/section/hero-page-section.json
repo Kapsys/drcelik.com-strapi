@@ -19,14 +19,29 @@
       "component": "small-component.button"
     },
     "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "bottom",
+        "center",
+        "left",
+        "left-bottom",
+        "left-top",
+        "right",
+        "right-bottom",
+        "right-top",
+        "top"
+      ]
     }
   }
 }

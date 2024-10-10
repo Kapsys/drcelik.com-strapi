@@ -560,6 +560,19 @@ export interface SectionHeroPageSection extends Schema.Component {
     description: Attribute.Text;
     button: Attribute.Component<'small-component.button', true>;
     backgroundImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imagePosition: Attribute.Enumeration<
+      [
+        'bottom',
+        'center',
+        'left',
+        'left-bottom',
+        'left-top',
+        'right',
+        'right-bottom',
+        'right-top',
+        'top'
+      ]
+    >;
   };
 }
 
