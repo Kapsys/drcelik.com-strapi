@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_section_about_me_sections",
+  "info": {
+    "displayName": "About Me Section",
+    "icon": "oneToMany",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.button"
+    },
+    "aboutMeContent": {
+      "displayName": "About Me Content",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.about-me-content"
+    }
+  }
+}

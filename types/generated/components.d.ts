@@ -394,6 +394,25 @@ export interface SmallComponentButton extends Schema.Component {
   };
 }
 
+export interface SmallComponentAboutMeContent extends Schema.Component {
+  collectionName: 'components_small_component_about_me_contents';
+  info: {
+    displayName: 'About Me Content';
+    icon: 'envelop';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
+  };
+}
+
 export interface SharedSeo extends Schema.Component {
   collectionName: 'components_shared_seos';
   info: {
@@ -739,6 +758,20 @@ export interface SectionBannerSection extends Schema.Component {
   };
 }
 
+export interface SectionAboutMeSection extends Schema.Component {
+  collectionName: 'components_section_about_me_sections';
+  info: {
+    displayName: 'About Me Section';
+    icon: 'oneToMany';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    button: Attribute.Component<'small-component.button', true>;
+    aboutMeContent: Attribute.Component<'small-component.about-me-content', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -770,6 +803,7 @@ declare module '@strapi/types' {
       'small-component.contact-infos': SmallComponentContactInfos;
       'small-component.category': SmallComponentCategory;
       'small-component.button': SmallComponentButton;
+      'small-component.about-me-content': SmallComponentAboutMeContent;
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
       'section.videos-section': SectionVideosSection;
@@ -791,6 +825,7 @@ declare module '@strapi/types' {
       'section.blog-categories': SectionBlogCategories;
       'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
+      'section.about-me-section': SectionAboutMeSection;
     }
   }
 }

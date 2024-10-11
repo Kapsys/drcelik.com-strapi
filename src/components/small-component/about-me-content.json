@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_small_component_about_me_contents",
+  "info": {
+    "displayName": "About Me Content",
+    "icon": "envelop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBalloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}
