@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_privacy_policy_sections",
+  "info": {
+    "displayName": "Privacy Policy Section",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "privacyPolicyContents": {
+      "displayName": "Privacy Policy Contents",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.privacy-policy-contents"
+    }
+  }
+}

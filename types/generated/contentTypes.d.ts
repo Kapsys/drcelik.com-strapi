@@ -1383,7 +1383,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'section.dots-section',
         'section.blog-category-section',
         'section.about-me-section',
-        'section.videos-page-section'
+        'section.videos-page-section',
+        'section.privacy-policy-section'
       ]
     > &
       Attribute.SetPluginOptions<{

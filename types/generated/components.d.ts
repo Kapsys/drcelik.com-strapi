@@ -120,6 +120,25 @@ export interface SmallComponentProductsSlider extends Schema.Component {
   };
 }
 
+export interface SmallComponentPrivacyPolicyContents extends Schema.Component {
+  collectionName: 'components_small_component_privacy_policy_contents';
+  info: {
+    displayName: 'Privacy Policy Contents';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
+  };
+}
+
 export interface SmallComponentPageVideos extends Schema.Component {
   collectionName: 'components_small_component_page_videos';
   info: {
@@ -565,6 +584,18 @@ export interface SectionProductSection extends Schema.Component {
   };
 }
 
+export interface SectionPrivacyPolicySection extends Schema.Component {
+  collectionName: 'components_section_privacy_policy_sections';
+  info: {
+    displayName: 'Privacy Policy Section';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    privacyPolicyContents: Attribute.Component<'small-component.privacy-policy-contents', true>;
+  };
+}
+
 export interface SectionImagesSection extends Schema.Component {
   collectionName: 'components_section_images_sections';
   info: {
@@ -811,6 +842,7 @@ declare module '@strapi/types' {
       'small-component.steps': SmallComponentSteps;
       'small-component.socials': SmallComponentSocials;
       'small-component.products-slider': SmallComponentProductsSlider;
+      'small-component.privacy-policy-contents': SmallComponentPrivacyPolicyContents;
       'small-component.page-videos': SmallComponentPageVideos;
       'small-component.metrics-block': SmallComponentMetricsBlock;
       'small-component.menu-items': SmallComponentMenuItems;
@@ -840,6 +872,7 @@ declare module '@strapi/types' {
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
       'section.product-section': SectionProductSection;
+      'section.privacy-policy-section': SectionPrivacyPolicySection;
       'section.images-section': SectionImagesSection;
       'section.hero-section': SectionHeroSection;
       'section.hero-page-section': SectionHeroPageSection;
