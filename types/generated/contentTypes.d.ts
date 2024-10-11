@@ -969,12 +969,23 @@ export interface ApiContactBannerContactBanner extends Schema.SingleType {
     singularName: 'contact-banner';
     pluralName: 'contact-banners';
     displayName: 'Contact Banner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    bannerSection: Attribute.Component<'section.banner-section'>;
+    bannerSection: Attribute.Component<'section.banner-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -983,6 +994,12 @@ export interface ApiContactBannerContactBanner extends Schema.SingleType {
     updatedBy: Attribute.Relation<'api::contact-banner.contact-banner', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<
+      'api::contact-banner.contact-banner',
+      'oneToMany',
+      'api::contact-banner.contact-banner'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -992,12 +1009,23 @@ export interface ApiContactFormContactForm extends Schema.SingleType {
     singularName: 'contact-form';
     pluralName: 'contact-forms';
     displayName: 'Contact Form';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    contactSection: Attribute.Component<'section.contact-section'>;
+    contactSection: Attribute.Component<'section.contact-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1006,6 +1034,70 @@ export interface ApiContactFormContactForm extends Schema.SingleType {
     updatedBy: Attribute.Relation<'api::contact-form.contact-form', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToMany',
+      'api::contact-form.contact-form'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiErrorPageErrorPage extends Schema.SingleType {
+  collectionName: 'error_pages';
+  info: {
+    singularName: 'error-page';
+    pluralName: 'error-pages';
+    displayName: 'Error Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroPageSection: Attribute.Component<'section.hero-page-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::error-page.error-page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::error-page.error-page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<
+      'api::error-page.error-page',
+      'oneToMany',
+      'api::error-page.error-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1015,18 +1107,31 @@ export interface ApiFaqFaq extends Schema.SingleType {
     singularName: 'faq';
     pluralName: 'faqs';
     displayName: 'Faq';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    faqSection: Attribute.Component<'section.faq-section'>;
+    faqSection: Attribute.Component<'section.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> & Attribute.Private;
     updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> & Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<'api::faq.faq', 'oneToMany', 'api::faq.faq'>;
+    locale: Attribute.String;
   };
 }
 
@@ -1093,9 +1198,24 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    header: Attribute.Component<'section.header'>;
-    footer: Attribute.Component<'section.footer'>;
+    header: Attribute.Component<'section.header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    footer: Attribute.Component<'section.footer'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1104,6 +1224,8 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     updatedBy: Attribute.Relation<'api::global.global', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<'api::global.global', 'oneToMany', 'api::global.global'>;
+    locale: Attribute.String;
   };
 }
 
@@ -1118,21 +1240,96 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
-    slug: Attribute.String;
-    heroSection: Attribute.Component<'section.hero-section'>;
-    stepsSection: Attribute.Component<'section.steps-section'>;
-    beforeAfterSection: Attribute.Component<'section.before-after-section'>;
-    testimonialSection: Attribute.Component<'section.testimonials-section'>;
-    videosSection: Attribute.Component<'section.videos-section'>;
-    productSection: Attribute.Component<'section.product-section'>;
-    featuresSection: Attribute.Component<'small-component.features-section'>;
-    blogSection: Attribute.Component<'section.blog-section'>;
-    faqSection: Attribute.Component<'section.faq-section'>;
-    contactSection: Attribute.Component<'section.contact-section'>;
-    bannerSection: Attribute.Component<'section.banner-section'>;
-    seo: Attribute.Component<'shared.seo'>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroSection: Attribute.Component<'section.hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    stepsSection: Attribute.Component<'section.steps-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    beforeAfterSection: Attribute.Component<'section.before-after-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    testimonialSection: Attribute.Component<'section.testimonials-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    videosSection: Attribute.Component<'section.videos-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    productSection: Attribute.Component<'section.product-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    featuresSection: Attribute.Component<'small-component.features-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blogSection: Attribute.Component<'section.blog-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    faqSection: Attribute.Component<'section.faq-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contactSection: Attribute.Component<'section.contact-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    bannerSection: Attribute.Component<'section.banner-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1141,6 +1338,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     updatedBy: Attribute.Relation<'api::homepage.homepage', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean & Attribute.Private & Attribute.DefaultTo<false>;
+    localizations: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1339,6 +1542,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact-banner.contact-banner': ApiContactBannerContactBanner;
       'api::contact-form.contact-form': ApiContactFormContactForm;
+      'api::error-page.error-page': ApiErrorPageErrorPage;
       'api::faq.faq': ApiFaqFaq;
       'api::form.form': ApiFormForm;
       'api::global.global': ApiGlobalGlobal;

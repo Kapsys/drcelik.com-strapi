@@ -4,17 +4,27 @@
   "info": {
     "singularName": "contact-banner",
     "pluralName": "contact-banners",
-    "displayName": "Contact Banner"
+    "displayName": "Contact Banner",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "bannerSection": {
       "type": "component",
       "repeatable": false,
-      "component": "section.banner-section"
+      "component": "section.banner-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
