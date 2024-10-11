@@ -120,6 +120,21 @@ export interface SmallComponentProductsSlider extends Schema.Component {
   };
 }
 
+export interface SmallComponentPageVideos extends Schema.Component {
+  collectionName: 'components_small_component_page_videos';
+  info: {
+    displayName: 'Page Videos';
+    icon: 'clock';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    videoUrl: Attribute.Text;
+    shadowLayerTitle: Attribute.String;
+  };
+}
+
 export interface SmallComponentMetricsBlock extends Schema.Component {
   collectionName: 'components_small_component_metrics_blocks';
   info: {
@@ -477,6 +492,18 @@ export interface SectionVideosSection extends Schema.Component {
   };
 }
 
+export interface SectionVideosPageSection extends Schema.Component {
+  collectionName: 'components_section_videos_page_sections';
+  info: {
+    displayName: 'Videos Page Section';
+    icon: 'expand';
+    description: '';
+  };
+  attributes: {
+    pageVideos: Attribute.Component<'small-component.page-videos', true>;
+  };
+}
+
 export interface SectionTreatmentsSection extends Schema.Component {
   collectionName: 'components_section_treatments_sections';
   info: {
@@ -784,6 +811,7 @@ declare module '@strapi/types' {
       'small-component.steps': SmallComponentSteps;
       'small-component.socials': SmallComponentSocials;
       'small-component.products-slider': SmallComponentProductsSlider;
+      'small-component.page-videos': SmallComponentPageVideos;
       'small-component.metrics-block': SmallComponentMetricsBlock;
       'small-component.menu-items': SmallComponentMenuItems;
       'small-component.list': SmallComponentList;
@@ -807,6 +835,7 @@ declare module '@strapi/types' {
       'shared.seo': SharedSeo;
       'shared.meta-social': SharedMetaSocial;
       'section.videos-section': SectionVideosSection;
+      'section.videos-page-section': SectionVideosPageSection;
       'section.treatments-section': SectionTreatmentsSection;
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;

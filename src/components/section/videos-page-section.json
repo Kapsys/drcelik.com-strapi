@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_videos_page_sections",
+  "info": {
+    "displayName": "Videos Page Section",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pageVideos": {
+      "displayName": "Page Videos",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.page-videos"
+    }
+  }
+}

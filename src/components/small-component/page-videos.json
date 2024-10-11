@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_small_component_page_videos",
+  "info": {
+    "displayName": "Page Videos",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "videoUrl": {
+      "type": "text"
+    },
+    "shadowLayerTitle": {
+      "type": "string"
+    }
+  }
+}
