@@ -587,6 +587,7 @@ export interface SectionSpecificationSection extends Schema.Component {
     isSmallImage: Attribute.Boolean;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isCenteredText: Attribute.Boolean;
+    subtitle: Attribute.String;
   };
 }
 

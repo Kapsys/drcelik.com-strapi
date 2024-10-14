@@ -39,6 +39,12 @@
     },
     "isCenteredText": {
       "type": "boolean"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "isColoredBg": {
+      "type": "boolean"
     }
   }
 }
