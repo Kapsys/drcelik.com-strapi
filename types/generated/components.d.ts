@@ -264,7 +264,7 @@ export interface SmallComponentImages extends Schema.Component {
       >;
     isImageLeft: Attribute.Boolean;
     isBigImage: Attribute.Boolean;
-    list: Attribute.Component<'small-component.list', true>;
+    isColoredBg: Attribute.Boolean;
   };
 }
 
@@ -564,6 +564,29 @@ export interface SectionStepsSection extends Schema.Component {
     steps: Attribute.Component<'small-component.steps', true>;
     titleComponent: Attribute.Component<'small-component.title-component'>;
     description: Attribute.Text;
+  };
+}
+
+export interface SectionSpecificationSection extends Schema.Component {
+  collectionName: 'components_section_specification_sections';
+  info: {
+    displayName: 'Specification Section';
+    icon: 'oneToMany';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
+    list: Attribute.Component<'small-component.list', true>;
+    isImageLeft: Attribute.Boolean;
+    isSmallImage: Attribute.Boolean;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    isCenteredText: Attribute.Boolean;
   };
 }
 
@@ -871,6 +894,7 @@ declare module '@strapi/types' {
       'section.treatments-section': SectionTreatmentsSection;
       'section.testimonials-section': SectionTestimonialsSection;
       'section.steps-section': SectionStepsSection;
+      'section.specification-section': SectionSpecificationSection;
       'section.product-section': SectionProductSection;
       'section.privacy-policy-section': SectionPrivacyPolicySection;
       'section.images-section': SectionImagesSection;

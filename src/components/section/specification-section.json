@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_section_specification_sections",
+  "info": {
+    "displayName": "Specification Section",
+    "icon": "oneToMany"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBalloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.list"
+    },
+    "isImageLeft": {
+      "type": "boolean"
+    },
+    "isSmallImage": {
+      "type": "boolean"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "isCenteredText": {
+      "type": "boolean"
+    }
+  }
+}

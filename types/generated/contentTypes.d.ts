@@ -1384,7 +1384,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'section.blog-category-section',
         'section.about-me-section',
         'section.videos-page-section',
-        'section.privacy-policy-section'
+        'section.privacy-policy-section',
+        'section.specification-section'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -1412,22 +1413,6 @@ export interface ApiPagePage extends Schema.CollectionType {
       }>;
     category: Attribute.Enumeration<
       ['about-me', 'smile-transformation', 'general', 'our-treatments']
-    > &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    subcategory: Attribute.Enumeration<
-      [
-        'about-me',
-        'treatments',
-        'general',
-        'implant-treatments',
-        'oral-and-maxillofacial-surgery',
-        'periodontology'
-      ]
     > &
       Attribute.Required &
       Attribute.SetPluginOptions<{

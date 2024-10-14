@@ -37,7 +37,8 @@
         "section.blog-category-section",
         "section.about-me-section",
         "section.videos-page-section",
-        "section.privacy-policy-section"
+        "section.privacy-policy-section",
+        "section.specification-section"
       ],
       "pluginOptions": {
         "i18n": {
@@ -78,23 +79,6 @@
         "smile-transformation",
         "general",
         "our-treatments"
-      ],
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "subcategory": {
-      "type": "enumeration",
-      "enum": [
-        "about-me",
-        "treatments",
-        "general",
-        "implant-treatments",
-        "oral-and-maxillofacial-surgery",
-        "periodontology"
       ],
       "required": true,
       "pluginOptions": {

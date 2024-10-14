@@ -36,10 +36,8 @@
     "isBigImage": {
       "type": "boolean"
     },
-    "list": {
-      "type": "component",
-      "repeatable": true,
-      "component": "small-component.list"
+    "isColoredBg": {
+      "type": "boolean"
     }
   }
 }
