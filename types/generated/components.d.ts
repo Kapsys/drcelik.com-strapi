@@ -33,6 +33,7 @@ export interface SmallComponentTestimonials extends Schema.Component {
   info: {
     displayName: 'Testimonials';
     icon: 'medium';
+    description: '';
   };
   attributes: {
     personPhoto: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -41,7 +42,7 @@ export interface SmallComponentTestimonials extends Schema.Component {
     companyName: Attribute.String;
     countryName: Attribute.String;
     button: Attribute.Component<'small-component.button'>;
-    countryFlag: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    countryCode: Attribute.String;
   };
 }
 
@@ -588,6 +589,7 @@ export interface SectionSpecificationSection extends Schema.Component {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isCenteredText: Attribute.Boolean;
     subtitle: Attribute.String;
+    isColoredBg: Attribute.Boolean;
   };
 }
 
