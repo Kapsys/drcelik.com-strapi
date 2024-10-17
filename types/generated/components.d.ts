@@ -266,6 +266,7 @@ export interface SmallComponentImages extends Schema.Component {
     isImageLeft: Attribute.Boolean;
     isBigImage: Attribute.Boolean;
     isColoredBg: Attribute.Boolean;
+    isCenteredText: Attribute.Boolean;
   };
 }
 

@@ -8,14 +8,15 @@
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "title": {
       "type": "string"
@@ -37,6 +38,9 @@
       "type": "boolean"
     },
     "isColoredBg": {
+      "type": "boolean"
+    },
+    "isCenteredText": {
       "type": "boolean"
     }
   }
