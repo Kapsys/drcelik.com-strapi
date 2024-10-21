@@ -378,6 +378,19 @@ export interface SmallComponentFaq extends Schema.Component {
   };
 }
 
+export interface SmallComponentEmptyStates extends Schema.Component {
+  collectionName: 'components_small_component_empty_states';
+  info: {
+    displayName: 'Empty States';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    button: Attribute.Component<'small-component.button', true>;
+  };
+}
+
 export interface SmallComponentContents extends Schema.Component {
   collectionName: 'components_small_component_contents';
   info: {
@@ -799,6 +812,7 @@ export interface SectionBlogCategorySection extends Schema.Component {
     searchPlaceholder: Attribute.String;
     blogCategories: Attribute.Component<'section.blog-categories', true>;
     button: Attribute.Component<'small-component.button', true>;
+    emptyStates: Attribute.Component<'small-component.empty-states', true>;
   };
 }
 
@@ -886,6 +900,7 @@ declare module '@strapi/types' {
       'small-component.footer-items': SmallComponentFooterItems;
       'small-component.features-section': SmallComponentFeaturesSection;
       'small-component.faq': SmallComponentFaq;
+      'small-component.empty-states': SmallComponentEmptyStates;
       'small-component.contents': SmallComponentContents;
       'small-component.contact-infos': SmallComponentContactInfos;
       'small-component.category': SmallComponentCategory;

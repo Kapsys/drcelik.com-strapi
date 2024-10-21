@@ -20,6 +20,12 @@
       "type": "component",
       "repeatable": true,
       "component": "small-component.button"
+    },
+    "emptyStates": {
+      "displayName": "Empty States",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.empty-states"
     }
   }
 }
