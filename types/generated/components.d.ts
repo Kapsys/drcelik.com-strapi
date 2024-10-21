@@ -385,6 +385,7 @@ export interface SmallComponentEmptyStates extends Schema.Component {
     description: '';
   };
   attributes: {
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Attribute.String;
     description: Attribute.Text;
     button: Attribute.Component<'small-component.button', true>;
@@ -459,56 +460,6 @@ export interface SmallComponentAboutMeContent extends Schema.Component {
           preset: 'toolbarBalloon';
         }
       >;
-  };
-}
-
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
-  info: {
-    displayName: 'seo';
-    icon: 'search';
-  };
-  attributes: {
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-        maxLength: 250;
-      }>;
-    metaImage: Attribute.Media<'images' | 'files' | 'videos'> & Attribute.Required;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    keywords: Attribute.Text;
-    metaRobots: Attribute.String;
-    structuredData: Attribute.JSON;
-    metaViewport: Attribute.String;
-    canonicalURL: Attribute.String;
-  };
-}
-
-export interface SharedMetaSocial extends Schema.Component {
-  collectionName: 'components_shared_meta_socials';
-  info: {
-    displayName: 'metaSocial';
-    icon: 'project-diagram';
-  };
-  attributes: {
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> & Attribute.Required;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 65;
-      }>;
-    image: Attribute.Media<'images' | 'files' | 'videos'>;
   };
 }
 
@@ -871,6 +822,56 @@ export interface SectionAboutMeSection extends Schema.Component {
   };
 }
 
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+  };
+  attributes: {
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+        maxLength: 250;
+      }>;
+    metaImage: Attribute.Media<'images' | 'files' | 'videos'> & Attribute.Required;
+    metaSocial: Attribute.Component<'shared.meta-social', true>;
+    keywords: Attribute.Text;
+    metaRobots: Attribute.String;
+    structuredData: Attribute.JSON;
+    metaViewport: Attribute.String;
+    canonicalURL: Attribute.String;
+  };
+}
+
+export interface SharedMetaSocial extends Schema.Component {
+  collectionName: 'components_shared_meta_socials';
+  info: {
+    displayName: 'metaSocial';
+    icon: 'project-diagram';
+  };
+  attributes: {
+    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    description: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 65;
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -906,8 +907,6 @@ declare module '@strapi/types' {
       'small-component.category': SmallComponentCategory;
       'small-component.button': SmallComponentButton;
       'small-component.about-me-content': SmallComponentAboutMeContent;
-      'shared.seo': SharedSeo;
-      'shared.meta-social': SharedMetaSocial;
       'section.videos-section': SectionVideosSection;
       'section.videos-page-section': SectionVideosPageSection;
       'section.treatments-section': SectionTreatmentsSection;
@@ -931,6 +930,8 @@ declare module '@strapi/types' {
       'section.before-after-section': SectionBeforeAfterSection;
       'section.banner-section': SectionBannerSection;
       'section.about-me-section': SectionAboutMeSection;
+      'shared.seo': SharedSeo;
+      'shared.meta-social': SharedMetaSocial;
     }
   }
 }
