@@ -12,6 +12,12 @@
       "type": "component",
       "repeatable": true,
       "component": "small-component.privacy-policy-contents"
+    },
+    "contactUsSidebar": {
+      "displayName": "Contact us Sidebar",
+      "type": "component",
+      "repeatable": false,
+      "component": "small-component.contact-us-sidebar"
     }
   }
 }

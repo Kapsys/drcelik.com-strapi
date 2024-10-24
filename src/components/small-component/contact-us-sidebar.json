@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_small_component_contact_us_sidebars",
+  "info": {
+    "displayName": "Contact us Sidebar",
+    "icon": "envelop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contactUsTitle": {
+      "type": "string"
+    },
+    "contactUsText": {
+      "type": "text"
+    },
+    "infos": {
+      "displayName": "Infos",
+      "type": "component",
+      "repeatable": true,
+      "component": "small-component.infos"
+    }
+  }
+}
