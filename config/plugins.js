@@ -46,7 +46,7 @@ module.exports = ({ env }) => ({
     enabled: true,
     config: {
       autoGenerate: true,
-      allowedFields: ['slug_category', 'lang', 'langForSitemap', 'slug'],
+      allowedFields: ['slug_category', 'lang', 'langForSitemap', 'slug', 'category'],
       excludedTypes: [],
     },
   },
