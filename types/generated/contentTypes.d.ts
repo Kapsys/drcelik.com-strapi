@@ -1412,7 +1412,7 @@ export interface ApiPagePage extends Schema.CollectionType {
         };
       }>;
     category: Attribute.Enumeration<
-      ['about-me', 'smile-transformation', 'general', 'our-treatments']
+      ['about-me', 'smile-transformation', 'general', 'our-treatment']
     > &
       Attribute.Required &
       Attribute.SetPluginOptions<{

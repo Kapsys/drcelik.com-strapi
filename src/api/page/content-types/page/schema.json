@@ -78,7 +78,7 @@
         "about-me",
         "smile-transformation",
         "general",
-        "our-treatments"
+        "our-treatment"
       ],
       "required": true,
       "pluginOptions": {
