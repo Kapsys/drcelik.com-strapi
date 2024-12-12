@@ -428,7 +428,7 @@ export interface SmallComponentContactInfos extends Schema.Component {
   attributes: {
     icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text: Attribute.String;
-    info: Attribute.String;
+    info: Attribute.Text;
     link: Attribute.String;
   };
 }
