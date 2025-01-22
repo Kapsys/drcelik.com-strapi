@@ -310,6 +310,7 @@ export interface SmallComponentFormInputs extends Schema.Component {
     placeholder: Attribute.String;
     type: Attribute.Enumeration<['countrySelect', 'text', 'email', 'phone', 'textarea']>;
     countrySelect: Attribute.Enumeration<['text', 'email', 'phone', 'textarea']>;
+    label: Attribute.String;
   };
 }
 

@@ -31,6 +31,9 @@
         "phone",
         "textarea"
       ]
+    },
+    "label": {
+      "type": "string"
     }
   }
 }
